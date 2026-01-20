@@ -6,6 +6,10 @@ module Api
       def index
         render(json: { ok: true })
       end
+
+      def download
+        send_data("binary data content", filename: "report.txt", type: "text/plain")
+      end
     end
   end
 end

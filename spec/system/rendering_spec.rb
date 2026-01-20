@@ -116,5 +116,21 @@ RSpec.describe "Rendering" do
         expect(controller.index).to eq(expected_json)
       end
     end
+
+    describe "#download" do
+      it "returns binary data without serialization" do
+        expect(controller.download).to eq("binary data content")
+      end
+
+      it "does not call serialize" do
+        expect(controller).not_to receive(:serialize)
+        controller.download
+      end
+
+      it "does not call lookup_serializer" do
+        expect(controller).not_to receive(:lookup_serializer)
+        controller.download
+      end
+    end
   end
 end
