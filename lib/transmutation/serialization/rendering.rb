@@ -4,7 +4,7 @@ module Transmutation
   module Serialization
     module Rendering
       # Serializes the value of the `json` parameter before calling the existing render method.
-      def render(*args, json: nil, serialize: true, namespace: nil, serializer: nil, max_depth: 2, **kwargs)
+      def render(*args, json: nil, serialize: true, namespace: nil, serializer: nil, max_depth: 1, **kwargs)
         return super(*args, **kwargs) unless json
         return super(*args, **kwargs, json:) unless serialize
 
