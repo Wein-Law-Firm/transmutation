@@ -20,7 +20,7 @@ module Transmutation
 
     include Transmutation::Serialization
 
-    def initialize(object, depth: 0, max_depth: 1)
+    def initialize(object, depth: 0, max_depth: Transmutation.max_depth)
       @object = object
       @depth = depth
       @max_depth = max_depth
